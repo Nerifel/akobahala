@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just your Average Calculator</title>
+  <link href='/style.css' rel='stylesheet'>
+</head>
+<body>
+  <h1>Just your
+ Average Calculator</h1>
+  <div id="calculator">
+    <input type="number" id="num1" placeholder="Enter number 1">
+
+    <select id="operation">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value
+="*">*</option>
+      <option value="/">/</option>
+    </select>
+
+    <input type="number" id="num2" placeholder="Enter number 2">
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p> 
+  </div>
+
+  <script>
+    function calculate() {
+      let num1 = parseFloat(document.getElementById('num1').value);
+      let num2 = parseFloat(document.getElementById('num2').value);
+      let operation = document.getElementById('operation').value;
+      let
+ result;
+
+      switch (operation) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          result = num1 / num2;
+          break;
+      }
+
+      document.getElementById('result').textContent = "Result: " + result + " UwU"; 
+    }
+  </script>
+</body>
+</html>
